@@ -1,0 +1,472 @@
+Code copied from this website:
+https://kumarweb28.wixsite.com/kumarweb/software-foundation-python
+
+  _    _ _______ __  __ _             _____  _____ _____ 
+ | |  | |__   __|  \/  | |           / ____|/ ____/ ____|
+ | |__| |  | |  | \  / | |          | |    | (___| (___  
+ |  __  |  | |  | |\/| | |          | |     \___ \\___ \ 
+ | |  | |  | |  | |  | | |____      | |____ ____) |___) |
+ |_|  |_|  |_|  |_|  |_|______|      \_____|_____/_____/ 
+                                                         
+                                                         
+
+UI Hands on 1
+<!-- Format div -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question1</title>
+</head>
+<body>
+  <!-- Design & Develop your code here -->
+  <div style="background-color: red; color: white;" id="head" width="600" height="200">
+    <h1>My Application</h1>
+  </div>
+
+  <div id="body" width="600px" height="400px">
+    <span
+      style="background-color: #00FF00"
+      id="span1"
+      width="300px"
+      height="300px"
+    >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book.
+    </span>
+
+    <span
+      id="span2"
+      width="300px"
+      height="300px"
+      style="background-color: #0000FF"
+    >
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book.
+    </span>
+  </div>
+</body>
+</html>
+
+
+UI Hands on 2
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question2</title>
+</head>
+<body>
+  <!-- Design & Develop your code here -->
+  <h1>Inventory Management System</h1>
+  <hr id="rule1" width="100%">
+
+  <p id="menu" style="text-align: center">
+  </p>
+
+  <a id="menu1" href="page1.html">Registration</a>
+  <a id="menu2" href="page2.html">List</a>
+  <a id="menu3" href="page3.html">Search</a>
+
+  <hr id="rule2" width="100%">
+
+  <footer>
+    <h4>&copy; My App 2019-20.</h4>
+  </footer>
+</body>
+</html>
+
+
+UI Hands on 3
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form For Adding Books</title>
+  <style>
+    button {
+      background-color: #2345E4;
+    }
+  </style>
+</head>
+<body>
+  <h2>Add Book</h2>
+  <form name="addBook">
+    Book Id<br>
+    <input name="bookId" type="text"><br><br>
+
+    Book Name<br>
+    <input name="bookName" type="text"><br><br>
+
+    Category<br>
+    <select id="category">
+      <option value="Action">Action</option>
+      <option value="Drama">Drama</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Children">Childrens</option>
+    </select><br><br>
+
+    <input type="radio" name="availability" value="available">Available
+    <input type="radio" name="availability" value="not available">Not Available<br><br>
+
+    <button type="reset" name="cancel">Cancel</button>
+    <button type="submit" name="add">Add</button>
+  </form>
+</body>
+</html>
+
+
+
+UI Hands on 4
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question4</title>
+  <style>
+    #button {
+      background-color: #2345E4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Design & Develop your code here -->
+  <form id="registerCustomer">
+    <h1>Customer Registration</h1>
+
+    Customer Id<br>
+    <input type="text" name="customerId" maxlength="6" required><br>
+
+    Customer Name<br>
+    <input type="text" name="customerName" required><br>
+
+    City<br>
+    <select id="city" required>
+      <option value="chennai">Chennai</option>
+      <option value="mumbai">Mumbai</option>
+      <option value="delhi">Delhi</option>
+      <option value="trivandrum">Trivandrum</option>
+    </select><br>
+
+    <label>Gender</label><br>
+    <input type="radio" name="gender" value="Male" required="required">Male
+    <input type="radio" name="gender" value="Female" required="required">Female
+    <br><br>
+
+    <input id="button" type="submit" name="create" value="Create">
+    <input id="button" type="reset" name="cancel" value="Cancel">
+  </form>
+</body>
+</html>
+
+
+
+UI Hands on 5
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question3</title>
+  <style>
+    #custList {
+      border: 1;
+      width: 80%;
+      align: center;
+    }
+
+    th {
+      backgroundcolor: #42aaf4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Design & Develop your code here -->
+  <h2>Customer Listing</h2>
+  <table id="custList">
+    <tr>
+      <th>Customer Id</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>City</th>
+    </tr>
+    <tr>
+      <td>100001</td>
+      <td>Akshay Kumar</td>
+      <td>Male</td>
+      <td>Chennai</td>
+    </tr>
+    <tr>
+      <td>100002</td>
+      <td>Shyama P</td>
+      <td>Female</td>
+      <td>Trivandrum</td>
+    </tr>
+    <tr>
+      <td>100003</td>
+      <td>Nalini Kumari</td>
+      <td>Female</td>
+      <td>Bangalore</td>
+    </tr>
+    <tr>
+      <td>100004</td>
+      <td>Raj Shyam</td>
+      <td>Male</td>
+      <td>Chennai</td>
+    </tr>
+    <tr>
+      <td>100005</td>
+      <td>Sundar G</td>
+      <td>Male</td>
+      <td>Mangalore</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+
+UI Hands on 6
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question6</title>
+  <style>
+    table {
+      text-align: center;
+    }
+
+    th {
+      background-color: #45E078;
+    }
+
+    button {
+      background-color: #FF0000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Design & Develop your code here -->
+  <h1 id="header">Uni Sales</h1>
+  <div id="body">
+    <h2>My Cart</h2>
+
+    <input type="text" name="customerId" maxlength="6" required><br>
+    Customer Name<br>
+    <input type="text" name="customerName" required><br>
+
+    <input id="button" type="submit" name="create" value="Create">
+    <input id="button" type="reset" name="cancel" value="Cancel">
+
+    <table id="myCarts" width="80%">
+      <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td>Surf Excel</td>
+        <td>Washing Powder</td>
+        <td>85.00</td>
+        <td>1</td>
+        <td>85.00</td>
+      </tr>
+      <tr>
+        <td>Harpic</td>
+        <td>Toilet Cleaner</td>
+        <td>48.00</td>
+        <td>2</td>
+        <td>96.00</td>
+      </tr>
+    </table>
+  </div>
+
+  <button style="background-color:#FF0000" type="button" id="continue">Continue</button>
+  <button style="background-color:#FF0000" type="submit" id="checkout">Checkout</button>
+</body>
+</html>
+
+
+
+       _                                _       _   
+      | |                              (_)     | |  
+      | | __ ___   ____ _ ___  ___ _ __ _ _ __ | |_ 
+  _   | |/ _` \ \ / / _` / __|/ __| '__| | '_ \| __|
+ | |__| | (_| |\ V / (_| \__ \ (__| |  | | |_) | |_ 
+  \____/ \__,_| \_/ \__,_|___/\___|_|  |_| .__/ \__|
+                                         | |        
+                                         |_|        
+
+
+Javascript Hands on
+
+
+Javascript Hands on 1
+
+<!-- Copy paste this below code in index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="index.js"></script>
+</head>
+<body>
+  <input type="button" value="show" onclick="callMe()">
+</body>
+</html>
+
+
+<!-- Copy paste this below code in index.js -->
+
+function callMe() {
+  var Passenger = new Object();
+  Passenger.name = "Arun";
+  Passenger.age = 28;
+  Passenger.reservedStatus = 'true';
+
+  document.write('<div id="name">' + Passenger.name + '</div>');
+  document.write('<div id="age">' + Passenger.age + '</div>');
+  document.write('<div id="reservedStatus">' + Passenger.reservedStatus + '</div>');
+}
+
+
+
+Javascript Hands on 2
+
+<!-- Copy paste this below code in index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Array</title>
+  <script src="index.js"></script>
+</head>
+<body>
+  <div id="app">
+    Please Choose a Car to get its Details:
+    <select id="SelectCar" onchange="displayCarDetails()">
+      <option value="Innova">Innova</option>
+      <option value="Dzire">Dzire</option>
+      <option value="i20">i20</option>
+      <option value="i10">i10</option>
+    </select>
+    <p id="CarDetail"></p>
+  </div>
+</body>
+</html>
+
+
+
+<!-- Copy paste this below code in index.js -->
+let carDetails = [
+  { carName: "Innova", onRoadPrice: 900000, yearOfModel: 2016 },
+  { carName: "Dzire", onRoadPrice: 700000, yearOfModel: 2017 },
+  { carName: "i20", onRoadPrice: 500000, yearOfModel: 2013 },
+  { carName: "i10", onRoadPrice: 400000, yearOfModel: 2016 }
+];
+
+function displayCarDetails() {
+  var x = document.getElementById("SelectCar").value;
+
+  if (x == "Innova") {
+    document.getElementById("CarDetail").innerHTML =
+      carDetails[0].carName + "-" + carDetails[0].onRoadPrice + "-" + carDetails[0].yearOfModel;
+  } else if (x == "Dzire") {
+    document.getElementById("CarDetail").innerHTML =
+      carDetails[1].carName + "-" + carDetails[1].onRoadPrice + "-" + carDetails[1].yearOfModel;
+  } else if (x == "i20") {
+    document.getElementById("CarDetail").innerHTML =
+      carDetails[2].carName + "-" + carDetails[2].onRoadPrice + "-" + carDetails[2].yearOfModel;
+  } else {
+    document.getElementById("CarDetail").innerHTML =
+      carDetails[3].carName + "-" + carDetails[3].onRoadPrice + "-" + carDetails[3].yearOfModel;
+  }
+}
+
+
+Javascript Hands on 3
+
+<!-- Copy paste this below code in index.html -->
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <div id="app">
+    <form onsubmit="return getAge()">
+      <label>Enter your DOB:</label>
+      <input type="date" id="dob" name="dob">
+      <input type="submit" value="submit">
+      <p id="showresults"></p>
+    </form>
+  </div>
+  <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+<!-- Copy paste this below code in index.js -->
+
+function getAge() {
+  var age = document.getElementById("dob").value;
+  var l = age.toString();
+  var kk = l.substring(0, 4);
+  var year = parseInt(kk);
+  var d = new Date();
+  var n = d.getFullYear();
+  var k = n.toString();
+  var m = parseInt(k);
+
+  if (year >= m) {
+    document.getElementById("showresults").innerText = "Wrong date!!";
+  } else {
+    document.getElementById("showresults").innerText = "You are " + (m - year) + " year(s) old!!";
+  }
+}
+
+
+
+Javascript Hands on 4
+
+
+<!-- Copy paste this below code in index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Loop</title>
+  <script src="index.js"></script>
+</head>
+<body>
+  <input type="button" id="generate" value="Generate Series" onclick="SumOfSeries()">
+  <p id="result"></p>
+</body>
+</html>
+
+
+
+<!-- Copy paste this below code in index.js -->
+
+function SumOfSeries() {
+  var a = 0;
+  var b = 1;
+  var sum = 0;
+  var tmp;
+
+  while ((a < 100) && (b < 100)) {
+    sum = sum + b;
+    tmp = a;
+    a = b;
+    b = b + tmp;
+  }
+
+  document.getElementById("result").innerText = sum;
+}
+
+
