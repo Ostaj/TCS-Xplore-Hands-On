@@ -1,0 +1,708 @@
+TCS XPLORE JAVA HANDS ON 2025
+
+Code copied and cleaned from this website:
+https://kumarweb28.wixsite.com/kumarweb/java-hands-on
+
+   _____       _       _   _             
+  / ____|     | |     | | (_)            
+ | (___   ___ | |_   _| |_ _  ___  _ __  
+  \___ \ / _ \| | | | | __| |/ _ \| '_ \ 
+  ____) | (_) | | |_| | |_| | (_) | | | |
+ |_____/ \___/|_|\__,_|\__|_|\___/|_| |_|
+                                         
+
+
+
+//Numeric Computations - Hands on 1
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int account_id;
+        double balance, interest_rate;
+        Scanner sc = new Scanner(System.in);
+
+        account_id = sc.nextInt();
+        balance = sc.nextDouble();
+        interest_rate = sc.nextDouble();
+
+        Account account = new Account(account_id, balance, interest_rate);
+
+        int no_of_years = sc.nextInt();
+        double answer = calculate_interest(account, no_of_years);
+
+        System.out.format("%.3f", answer);
+    }
+
+    public static double calculate_interest(Account account, int no_of_years) {
+        double temp = no_of_years * account.get_interest_rate() / 100;
+        return (account.get_balance() * (account.get_interest_rate() + temp) / 100);
+    }
+}
+
+class Account {
+    private int id;
+    private double balance;
+    private double interest_rate;
+
+    Account(int id, double balance, double interest_rate) {
+        this.id = id;
+        this.balance = balance;
+        this.interest_rate = interest_rate;
+    }
+
+    public int get_id() {
+        return this.id;
+    }
+
+    public void set_id(int id) {
+        this.id = id;
+    }
+
+    public double get_balance() {
+        return this.balance;
+    }
+
+    public void set_balance(double balance) {
+        this.balance = balance;
+    }
+
+    public double get_interest_rate() {
+        return this.interest_rate;
+    }
+
+    public void set_interest_rate(double interest_rate) {
+        this.interest_rate = interest_rate;
+    }
+}
+
+
+//#####################################################################
+//Classes and Objects - Hands on 1
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class solution {
+    public static void main(String args[]) throws Exception {
+        int x1, y1, x2, y2;
+        Scanner scn = new Scanner(System.in);
+        x1 = scn.nextInt();
+        y1 = scn.nextInt();
+        x2 = scn.nextInt();
+        y2 = scn.nextInt();
+        point p1 = new point(x1, y1);
+        point p2 = new point(x2, y2);
+        double distance = find_distance(p1, p2);
+        System.out.format("%.3f", distance);
+    }
+
+    public static double find_distance(point p1, point p2) {
+        double distance = Math.sqrt(
+            (p2.x - p1.x) * (p2.x - p1.x) +
+            (p2.y - p1.y) * (p2.y - p1.y)
+        );
+        return distance;
+    }
+}
+
+class point {
+    int x, y;
+    point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
+//#####################################################################
+//Condtional Operands- Hands on 1
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        double x1, y1, x2, y2, x3, y3;
+        Scanner scn = new Scanner(System.in);
+        
+        x1 = scn.nextDouble();
+        y1 = scn.nextDouble();
+        x2 = scn.nextDouble();
+        y2 = scn.nextDouble();
+        x3 = scn.nextDouble();
+        y3 = scn.nextDouble();
+        
+        Point p1 = new Point(x1, y1);
+        Point p2 = new Point(x2, y2);
+        Point p3 = new Point(x3, y3);
+        
+        Point highest = point_with_highest_origin_distance(p1, p2, p3);
+        
+        System.out.format("%.1f \n", highest.x);
+        System.out.format("%.1f", highest.y);
+    }
+
+    public static Point point_with_highest_origin_distance(Point p1, Point p2, Point p3) {
+        double d1 = Math.sqrt(p1.x * p1.x + p1.y * p1.y);
+        double d2 = Math.sqrt(p2.x * p2.x + p2.y * p2.y);
+        double d3 = Math.sqrt(p3.x * p3.x + p3.y * p3.y);
+        
+        return d1 > d2 ? (d1 > d3 ? p1 : p3) : (d2 > d3 ? p2 : p3);
+    }
+}
+
+class Point {
+    double x, y;
+
+    Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
+//#####################################################################
+//Java iterations - Hands on 1
+// smallest character in string
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        String str;
+        Scanner scn = new Scanner(System.in);
+        str = scn.next();
+        
+        int[] values = new int[str.length()];
+        
+        for (int i = 0; i < str.length(); i++) {
+            values[i] = (int)(str.charAt(i));
+        }
+        
+        int min = values[0];
+        
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] <= min) {
+                min = values[i];
+            }
+        }
+        
+        char c = (char) min;
+        System.out.print(c);
+    }
+}
+
+
+//#####################################################################
+//Java iterations - Hands on 2
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner scn = new Scanner(System.in);
+        int[] num = new int[5];
+
+        for (int i = 0; i < 5; i++) {
+            num[i] = scn.nextInt();
+            String res = calculate_factorial(num[i]);
+            System.out.println(res);
+        }
+    }
+
+    public static String calculate_factorial(int n) {
+        BigInteger fact = new BigInteger("1");
+        
+        for (int i = 1; i <= n; i++) {
+            fact = fact.multiply(new BigInteger(i + ""));
+        }
+        
+        return fact.toString();
+    }
+}
+
+
+//#####################################################################
+//Java iterations - Hands on 3
+//Find second largest prime number
+
+NOTE: 2/3 Test cases passed
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static boolean is_prime(int num) {
+        if (num <= 1) return false;
+        if (num == 2) return true;
+        if (num % 2 == 0) return false;
+        for (int i = 3; i <= Math.sqrt(num); i += 2) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static void main(String args[]) throws Exception {
+        /*Enter your code here. Read input from STDIN. Print output to STDOUT*/
+        Scanner sc = new Scanner(System.in);
+        int count = sc.nextInt();
+
+        List<Integer> prime_list = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            int number = sc.nextInt();
+            if (is_prime(number)) {
+                prime_list.add(number);
+            }
+        }
+
+        if (prime_list.size() < 2) {
+            System.out.println("No second largest prime");
+            return;
+        }
+
+        Set<Integer> unique_primes = new TreeSet<>(Collections.reverseOrder());
+        unique_primes.addAll(prime_list);
+
+        Iterator<Integer> iter = unique_primes.iterator();
+        iter.next();
+        if (iter.hasNext()) {
+            System.out.println(iter.next());
+        } else {
+            System.out.println("No second largest prime");
+        }
+    }
+}
+
+
+
+//#####################################################################
+//Java arrays - Hands on 1 (Problem 1)
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner scn = new Scanner(System.in);
+        
+        Document[] docs_array = new Document[4];
+        Document[] res = new Document[4];
+        
+        for (int i = 0; i < docs_array.length; i++) {
+            docs_array[i] = new Document();
+            res[i] = new Document();
+        }
+        
+        for (int i = 0; i < docs_array.length; i++) {
+            docs_array[i].set_id(scn.nextInt());
+            docs_array[i].set_title(scn.next());
+            docs_array[i].set_folder_name(scn.next());
+            docs_array[i].set_pages(scn.nextInt());
+        }
+        
+        res = docs_with_odd_pages(docs_array);
+        
+        for (int i = 0; i < res.length; i++) {
+            if (res[i].get_title() != null) {
+                System.out.println(res[i].get_id() + " " + res[i].get_title() + " " + res[i].get_folder_name() + " " + res[i].get_pages());
+            }
+        }
+    }
+
+    public static Document[] docs_with_odd_pages(Document[] docs_array) {
+        Document[] odd_docs = new Document[4];
+        
+        for (int i = 0; i < docs_array.length; i++) {
+            odd_docs[i] = new Document();
+        }
+        
+        int k = 0;
+        
+        for (int i = 0; i < docs_array.length; i++) {
+            if (docs_array[i].get_pages() % 2 != 0) {
+                odd_docs[k++] = docs_array[i];
+            }
+        }
+        
+        int p = odd_docs.length;
+        
+        for (int i = 0; i < p - 1; i++) {
+            for (int j = 0; j < p - i - 1; j++) {
+                if (odd_docs[j].get_id() > odd_docs[j + 1].get_id()) {
+                    Document t = odd_docs[j];
+                    odd_docs[j] = odd_docs[j + 1];
+                    odd_docs[j + 1] = t;
+                }
+            }
+        }
+        
+        return odd_docs;
+    }
+}
+
+class Document {
+    private int id, pages;
+    private String title, folder_name;
+
+    public void set_id(int id) {
+        this.id = id;
+    }
+
+    public void set_title(String title) {
+        this.title = title;
+    }
+
+    public void set_folder_name(String folder_name) {
+        this.folder_name = folder_name;
+    }
+
+    public void set_pages(int pages) {
+        this.pages = pages;
+    }
+
+    public int get_id() {
+        return this.id;
+    }
+
+    public String get_title() {
+        return this.title;
+    }
+
+    public String get_folder_name() {
+        return this.folder_name;
+    }
+
+    public int get_pages() {
+        return this.pages;
+    }
+}
+
+
+
+//#####################################################################
+//Java arrays - Hands on 1 (Problem 2)
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner scn = new Scanner(System.in);
+        
+        Book[] books_array = new Book[4];
+        Book[] sorted = new Book[4];
+        
+        for (int i = 0; i < books_array.length; i++) {
+            books_array[i] = new Book();
+            sorted[i] = new Book();
+        }
+        
+        for (int i = 0; i < books_array.length; i++) {
+            books_array[i].set_id(scn.nextInt());
+            books_array[i].set_title(scn.next());
+            books_array[i].set_author(scn.next());
+            books_array[i].set_price(scn.nextDouble());
+        }
+        
+        sorted = sort_books_by_price(books_array);
+        
+        for (int i = 0; i < sorted.length; i++) {
+            System.out.println(sorted[i].get_id() + " " + sorted[i].get_title() + " " + sorted[i].get_author() + " " + sorted[i].get_price());
+        }
+    }
+
+    public static Book[] sort_books_by_price(Book[] books_array) {
+        int n = books_array.length;
+        
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (books_array[j].get_price() > books_array[j + 1].get_price()) {
+                    Book temp = books_array[j];
+                    books_array[j] = books_array[j + 1];
+                    books_array[j + 1] = temp;
+                }
+            }
+        }
+        
+        return books_array;
+    }
+}
+
+class Book {
+    private int id;
+    private String title, author;
+    private double price;
+
+    public void set_id(int id) {
+        this.id = id;
+    }
+
+    public void set_title(String title) {
+        this.title = title;
+    }
+
+    public void set_author(String author) {
+        this.author = author;
+    }
+
+    public void set_price(double price) {
+        this.price = price;
+    }
+
+    public int get_id() {
+        return this.id;
+    }
+
+    public String get_title() {
+        return this.title;
+    }
+
+    public String get_author() {
+        return this.author;
+    }
+
+    public double get_price() {
+        return this.price;
+    }
+}
+
+
+
+//#####################################################################
+//Java arrays - Hands on 2 (Problem 1) 
+
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Do not alter code in main method */
+        Shirt[] shirts = new Shirt[5];
+        Scanner sc = new Scanner(System.in);
+        
+        for (int i = 0; i < 5; i++) {
+            int tag = sc.nextInt();
+            sc.nextLine();
+            String brand = sc.nextLine();
+            double price = sc.nextDouble();
+            sc.nextLine();
+            char g = sc.nextLine().charAt(0);
+            shirts[i] = new Shirt(tag, brand, price, g);
+        }
+        
+        double price = sc.nextDouble();
+        
+        for (Shirt s : shirts) {
+            System.out.println(get_discount_price(s));
+        }
+        
+        Shirt[] result = get_shirt_with_more_than_specific_price(shirts, price);
+        
+        for (Shirt s : result) {
+            if (s.tag != 0) {
+                System.out.println(s.tag + " " + s.price + " " + s.brand);
+            }
+        }
+    }
+    
+    public static Double get_discount_price(Shirt s) {
+        char ge = s.g;
+        int f = 0;
+        
+        if (ge == 'm') f = 10;
+        if (ge == 'f') f = 20;
+        if (ge == 'u') f = 30;
+        
+        double p = s.price;
+        return p - ((p * f) / 100);
+    }
+    
+    public static Shirt[] get_shirt_with_more_than_specific_price(Shirt[] shirts, double price) {
+        Shirt[] r = new Shirt[5];
+        
+        for (int i = 0; i < r.length; i++) {
+            r[i] = new Shirt(0, "", 0.0, 'f');
+        }
+        
+        int k = 0;
+        for (int i = 0; i < r.length; i++) {
+            if (shirts[i].price > price) {
+                r[k++] = shirts[i];
+            }
+        }
+        
+        int n = r.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (r[j].price > r[j + 1].price) {
+                    Shirt t = r[j];
+                    r[j] = r[j + 1];
+                    r[j + 1] = t;
+                }
+            }
+        }
+        
+        return r;
+    }
+}
+
+class Shirt {
+    int tag;
+    String brand;
+    double price;
+    char g;
+    
+    Shirt(int tag, String brand, double price, char g) {
+        this.tag = tag;
+        this.brand = brand;
+        this.price = price;
+        this.g = g;
+    }
+}
+
+
+//#####################################################################
+//Java arrays - Hands on 2 (Problem 2)
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner scn = new Scanner(System.in);
+        
+        Book[] books_array = new Book[4];
+        Book[] res = new Book[4];
+        
+        for (int i = 0; i < books_array.length; i++) {
+            books_array[i] = new Book();
+            res[i] = new Book();
+        }
+        
+        for (int i = 0; i < 4; i++) {
+            books_array[i].set_id(scn.nextInt());
+            scn.nextLine();  // consume the newline character
+            books_array[i].set_title(scn.nextLine());
+            books_array[i].set_author(scn.nextLine());
+            books_array[i].set_price(scn.nextDouble());
+        }
+        
+        String value = scn.next();
+        res = search_title(value, books_array);
+        
+        int[] matched_id = new int[4];
+        int j = 0;
+        
+        for (int i = 0; i < res.length; i++) {
+            if (res[i].get_id() != 0) {
+                matched_id[j++] = res[i].get_id();
+            }
+        }
+        
+        Arrays.sort(matched_id);
+        
+        for (int i = 0; i < matched_id.length; i++) {
+            if (matched_id[i] != 0) {
+                System.out.println(matched_id[i]);
+            }
+        }
+    }
+
+    public static Book[] search_title(String value, Book[] books) {
+        int k = 0;
+        Book[] matching = new Book[4];
+        
+        for (int i = 0; i < matching.length; i++) {
+            matching[i] = new Book();
+        }
+        
+        for (int i = 0; i < books.length; i++) {
+            String val = value.toLowerCase();
+            String book_title = books[i].get_title().toLowerCase();
+            if (book_title.contains(val)) {
+                matching[k++] = books[i];
+            }
+        }
+        
+        return matching;
+    }
+}
+
+class Book {
+    private int id;
+    private String title;
+    private String author;
+    private double price;
+
+    public int get_id() {
+        return this.id;
+    }
+
+    public void set_id(int id) {
+        this.id = id;
+    }
+
+    public String get_title() {
+        return this.title;
+    }
+
+    public void set_title(String title) {
+        this.title = title;
+    }
+
+    public String get_author() {
+        return this.author;
+    }
+
+    public void set_author(String author) {
+        this.author = author;
+    }
+
+    public double get_price() {
+        return this.price;
+    }
+
+    public void set_price(double price) {
+        this.price = price;
+    }
+}
+
+
