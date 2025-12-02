@@ -1,0 +1,72 @@
+TCS XPLORE SQL HANDS ON 2025
+
+-- Codes are from this YouTube Video:
+-- https://www.youtube.com/watch?v=p73uaU1Cpys
+
+DO NOT DELETE THE FIRST AND LAST LINE OF THE CODE
+
+EXAMPLE:
+SET NULL "NULL";...
+/*
+ENTER CODE HERE
+*/
+exit;
+
+DO NOT REMOVE THE SET NULL AND EXIT LINES
+
+ --   _____       _       _   _             
+ --  / ____|     | |     | | (_)            
+ -- | (___   ___ | |_   _| |_ _  ___  _ __  
+ --  \___ \ / _ \| | | | | __| |/ _ \| '_ \ 
+ --  ____) | (_) | | |_| | |_| | (_) | | | |
+ -- |_____/ \___/|_|\__,_|\__|_|\___/|_| |_|
+
+
+--Q1
+--ABC Organisations stores....
+
+SELECT e.eName, d.deptName, d.deptAddress
+FROM Employees e
+JOIN Departments d
+ON e.eDeptId = d.deptId;
+
+
+--Q2
+--Display department details
+
+SELECT Dept_Id, Dept_Name
+FROM Department
+WHERE Dept_Location = 'Ground Floor';
+
+
+--Q3
+--Display non-programmer department name
+
+SELECT DISTINCT Dept_name
+FROM Departments, Employees
+WHERE Dept_ID = Emp_Dept_Id 
+AND Dept_name NOT IN (
+    SELECT DISTINCT Dept_name
+    FROM Departments, Employees
+    WHERE Dept_ID = Emp_Dept_Id 
+    AND Emp_Skill LIKE 'Programmer'
+);
+
+
+--Q4
+--Department wise skill
+
+select distinct Dept_name, Emp_skill
+from Departments, Employees
+where Dept_ID = Emp_Dept_Id
+order by Dept_Name desc, Emp_Skill;
+
+
+--Q5
+--Finds items not ordered
+
+select distinct Item_Name
+from Items
+where Item_id not in (
+select distinct Item_id from orders);
+
