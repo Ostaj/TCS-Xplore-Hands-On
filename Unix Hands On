@@ -1,0 +1,72 @@
+TCS XPLORE UNIX HANDS ON 2025
+
+   _____       _       _   _             
+  / ____|     | |     | | (_)            
+ | (___   ___ | |_   _| |_ _  ___  _ __  
+  \___ \ / _ \| | | | | __| |/ _ \| '_ \ 
+  ____) | (_) | | |_| | |_| | (_) | | | |
+ |_____/ \___/|_|\__,_|\__|_|\___/|_| |_|
+
+
+
+Question 1
+
+grep -o -i unix | wc -l
+
+
+
+
+Question 2
+
+head -3|wc -w
+
+
+
+
+Question 3
+
+read n
+awk '
+    BEGIN {
+        sum=0;
+        }
+     { if ( $0%2==0 ){
+         sum+=$0;
+     }
+     }
+     END { print "Total","=",sum}'
+
+
+
+
+
+Question 4
+
+sort -k3,3 -rn -t" " | head -n1 | awk '{print $2}'
+
+
+
+
+
+Question 5
+
+read
+awk 'BEGIN{ FS=";";Total;count;i;num}
+     { 
+       sum+=$3;num+=1;a[i++]=$3;
+         
+     }
+     END{ avg=sum/num;
+     for(j=0;j<i;j++){
+          if(a[j]<avg){
+              count++
+          }
+     } 
+       {print count} 
+    }'
+
+
+
+
+
+
